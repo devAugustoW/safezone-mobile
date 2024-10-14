@@ -97,6 +97,7 @@ npm expo start
 2. Crie as variáveis de ambiente com as chaves do cloudinary e a Cloudinary URL <br>
 3. Crie as variáveis de ambiente com as chaves da API <br>
 4. Insira no código as variáveis de ambiente no projeto. <br>
+5. Link repositório API: https://github.com/devAugustoW/api_safezone.git
 
 <br>
 <br>
