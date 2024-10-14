@@ -60,7 +60,7 @@ O SafeZone agora oferece recursos de segurança aprimorados com:
 1. Clone este repositório para a sua máquina local:
 
 ```bash
-git clone https://github.com/seu-usuario/safezone-frontend.git
+git clone https://github.com/devAugustoW/safezone-mobile.git
 ```
 
 <br>
@@ -95,7 +95,8 @@ npm expo start
 
 1. Crie um arquivo `.env` na raiz do projeto. <br>
 2. Crie as variáveis de ambiente com as chaves do cloudinary e a Cloudinary URL <br>
-3. Insira no código as variáveis de ambiente. <br>
+3. Crie as variáveis de ambiente com as chaves da API <br>
+4. Insira no código as variáveis de ambiente no projeto. <br>
 
 <br>
 <br>
