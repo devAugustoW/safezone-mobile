@@ -4,7 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from 'expo-status-bar';
 import { useFocusEffect } from '@react-navigation/native';
 import { 
-  IP_CALL
+  NEW_API_CALL,
+	NEW_PORT
 } from '@env';
 import {
   ListContainer,
@@ -20,7 +21,7 @@ const RiskPointList = () => {
   const fetchRiskPoints = async () => {
     try {
       const token = await AsyncStorage.getItem('token');
-      const response = await axios.get(`http://192.168.1.8:3000/getriskpoints`,
+      const response = await axios.get(`http://${NEW_API_CALL}:${NEW_PORT}/getriskpoints`,
         {
           headers: {
             Authorization: `Bearer ${token}`

@@ -7,8 +7,8 @@ import { Cloudinary } from "@cloudinary/url-gen";
 import { 
   CLOUDINARY_CLOUD_NAME, 
   CLOUDINARY_UPLOAD_PRESET,
-  IP_CALL, 
-  PORT
+  NEW_API_CALL, 
+  NEW_PORT
 } from '@env';
 import Feather from 'react-native-vector-icons/Feather';
 import { Alert, Image } from 'react-native';
@@ -191,7 +191,7 @@ const EditRiskPoint = () => {
 
     try{
       const token = await AsyncStorage.getItem('token');
-      const response = await axios.put(`http://192.168.1.8:3000/update/${id}`,
+      const response = await axios.put(`http://${NEW_API_CALL}:${NEW_PORT}/update/${id}`,
         riskPoint,
         {
           headers: {
@@ -238,7 +238,7 @@ const EditRiskPoint = () => {
             text: 'Deletar',
             onPress: async () => {
               const token = await AsyncStorage.getItem('token');
-              const response = await axios.delete(`http://192.168.1.8:3000/delete/${id}`,
+              const response = await axios.delete(`http://${NEW_API_CALL}:${NEW_PORT}/delete/${id}`,
                 {
                   headers: {
                     Authorization: `Bearer ${token}`

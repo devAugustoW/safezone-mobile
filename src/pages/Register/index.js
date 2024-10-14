@@ -8,7 +8,8 @@ import { Cloudinary } from "@cloudinary/url-gen";
 import { 
   CLOUDINARY_CLOUD_NAME, 
   CLOUDINARY_UPLOAD_PRESET,
-  IP_CALL,
+  NEW_API_CALL,
+	NEW_PORT
 } from '@env';
 import Feather from 'react-native-vector-icons/Feather';
 import { Alert, Image } from 'react-native';
@@ -214,7 +215,7 @@ const Register = () => {
     try{
       const token = await AsyncStorage.getItem('token');
 
-      const response = await axios.post(`http://http://192.168.1.8:3000/create`, 
+      const response = await axios.post(`http://${NEW_API_CALL}:${NEW_PORT}/create`, 
         riskPoint,
         {
           headers: {

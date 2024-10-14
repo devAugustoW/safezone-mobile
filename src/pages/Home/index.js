@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Marker } from 'react-native-maps';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { PORT } from '@env';
+import { NEW_API_CALL, NEW_PORT } from '@env';
 import Feather from 'react-native-vector-icons/Feather';
 import { 
   Background, 
@@ -21,28 +21,24 @@ const Home = () => {
   const navigation = useNavigation();
   const [riskPointLocations, setRiskPointLocations] = useState([]);
 
-  const fetchRiskPoints = async () => {
-
-    try {
-      const token = await AsyncStorage.getItem('token');
-
-      const response = await axios.get(`http://192.168.1.8:3000/getlocations`, {
-        headers: {
-          Authorization: `Bearer ${token}`  
-        }
-      });  
-
-      if(response.data){
-        setRiskPointLocations(response.data)
-
-      } else {
-        console.log('Chamada HOME falhou: ', response.data.message);
-      }          
-
-    } catch (error) {
-      console.log('Erro ao buscar pontos de risco:', error);
-    }
-  };
+	const fetchRiskPoints = async () => {
+		try {
+			const token = await AsyncStorage.getItem('token');
+			const response = await axios.get(`http://${NEW_API_CALL}:${NEW_PORT}/getlocations`, {
+				headers: {
+					Authorization: `Bearer ${token}`  
+				}
+			});
+	
+			if (response.data) {
+				setRiskPointLocations(response.data);
+			} else {
+				console.log('Chamada HOME falhou: ', response.data.message);
+			}
+		} catch (error) {
+			console.log('Erro ao buscar pontos de risco:', error);
+		}
+	};
    
   useEffect(() => {
     fetchRiskPoints();
@@ -55,8 +51,8 @@ const Home = () => {
         initialRegion={{
           latitude:-8.0525654,
           longitude:-34.8877599,
-          latitudeDelta:0.02,
-          longitudeDelta:0.02,
+          latitudeDelta:0.05,
+          longitudeDelta:0.05,
         }} >
       
         {riskPointLocations.map((loc) => (

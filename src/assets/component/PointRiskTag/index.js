@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Feather from 'react-native-vector-icons/Feather';
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { IP_CALL } from '@env';
+import { NEW_API_CALL, NEW_PORT } from '@env';
 import {
   Tag,
   IdentifyView,
@@ -38,7 +38,7 @@ const PointRiskTag = ({ id, refValue, title, description, status, statusDescript
             text: 'Deletar',
             onPress: async () => {
               const token = await AsyncStorage.getItem('token');
-              const response = await axios.delete(`http://192.168.1.8:3000/delete/${id}`,
+              const response = await axios.delete(`http://${NEW_API_CALL}:${NEW_PORT}/delete/${id}`,
                 {
                   headers: {
                     Authorization: `Bearer ${token}`

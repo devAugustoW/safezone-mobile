@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Alert, Platform, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { IP_CALL, PORT } from '@env';
+import { NEW_API_CALL, NEW_PORT } from '@env';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
   Background, 
@@ -28,7 +28,7 @@ export default function SignIn(){
     }
     
     try{
-      const response = await axios.post(`http://192.168.1.8:3000/login`, user);
+      const response = await axios.post(`http://${NEW_API_CALL}:${NEW_PORT}/login`, user);
 
       if (response.data){
         Alert.alert('Login realizado com sucesso');
