@@ -11,11 +11,10 @@ Feito em React Native, O SafeZone permite registrar, atualizar e visualizar faci
 <br>
 <br>
 
-## Tecnologias Utilizadas 💎
+## Tecnologias 💎
 
 - **React Native:** <br>
 - **React Navigation** <br>
-- **Expo** <br>
 - **Cloudinary** <br>
 - **Expo Image Picker** <br>
 - **Expo Location** <br>
@@ -27,10 +26,11 @@ Feito em React Native, O SafeZone permite registrar, atualizar e visualizar faci
 ## Funcionalidades 🔧
 
 1. **Cadastro de pontos de risco**
-2. **Captura de imagens por câmera e geolocalização**
-3. **Visualização de pontos de risco em mapa interativo**
-4. **Atualização de pontos de risco**
-5. **Remoção de pontos de risco**
+2. **Edição e remoção de pontos de risco**
+3. **Registro e captura de geolocalização**
+4. **Captura de imagens com a câmera do smartphone**
+5. **Visualização de pontos de risco em mapa interativo**
+6. **Login com autenticação de usuário**
 
 <br>
 <br>
