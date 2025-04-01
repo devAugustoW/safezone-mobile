@@ -3,6 +3,9 @@
 ![Demonstração do Aplicativo](./src/assets/SafeZone_github.png)
 <br>
 
+https://github.com/user-attachments/assets/4c125ad6-bcb9-410d-a860-bb6d7b8ddb37
+
+
 ## Descrição 📋
 
 SafeZone é um aplicativo mobile desenvolvido para auxiliar no gerenciamento de pontos de risco em obras e indústrias.
